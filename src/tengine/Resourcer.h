@@ -3,7 +3,7 @@
 #include <unordered_map>
 #include <memory>
 
-namespace Engine
+namespace TEngine
 {
 	class Resourcer
 	{

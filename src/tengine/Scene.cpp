@@ -5,7 +5,7 @@
 #include <raylib.h>
 #include <iostream>
 
-namespace Engine
+namespace TEngine
 {
 	Scene::Scene(SceneParameters params)
 		:m_windowHeight(params.windowHeight), m_windowWidth(params.windowWidth), m_sceneTitle(params.sceneTitle), m_targetFPS(params.targetFPS)

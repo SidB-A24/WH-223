@@ -3,7 +3,7 @@
 #include <chrono>
 #include <iostream>
 
-namespace Engine
+namespace TEngine
 {
 	enum LogLevel {
 		LOG_LEVEL_INFO = 2,

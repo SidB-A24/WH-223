@@ -12,7 +12,7 @@ endif()
 project ("WH_223")
 
 # Add source to this project's executable.
-add_executable (WH_223 "src/WH_223.cpp" "src/WH_223.h" "src/tengine/Logger.cpp" "src/tengine/Logger.h" "src/tengine/Resourcer.cpp" "src/tengine/Resourcer.h" "src/tengine/Scene.cpp" "src/tengine/Scene.h" "src/tengine/SceneManager.cpp" "src/tengine/SceneManager.h")
+add_executable (WH_223 "src/WH_223.cpp" "src/WH_223.h" "src/tengine/Logger.cpp" "src/tengine/Logger.h" "src/tengine/Resourcer.cpp" "src/tengine/Resourcer.h" "src/tengine/Scene.cpp" "src/tengine/Scene.h" "src/tengine/SceneManager.cpp" "src/tengine/SceneManager.h" "src/wh_223/Game.cpp" "src/wh_223/Game.h" "src/wh_223/Labyrinth.h" "src/wh_223/Labyrinth.cpp" "src/wh_223/Entity/Entity.h" "src/wh_223/Entity/Entity.cpp" "src/wh_223/Entity/Player.h" "src/wh_223/Entity/Player.cpp" "src/wh_223/Entity/Narrator.h" "src/wh_223/Entity/Narrator.cpp")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET WH_223 PROPERTY CXX_STANDARD 20)

@@ -1,6 +1,6 @@
 #include "Logger.h"
 
-namespace Engine
+namespace TEngine
 {
 	const char* logLevelLabels[3] = {
 			"ERROR",

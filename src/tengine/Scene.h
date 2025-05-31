@@ -2,7 +2,7 @@
 
 #include <raylib.h>
 
-namespace Engine
+namespace TEngine
 {
 	struct SceneParameters {
 		int windowWidth = 1920;

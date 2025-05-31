@@ -4,7 +4,7 @@
 #include <raylib.h>
 #include <memory>
 
-namespace Engine
+namespace TEngine
 {
 	static Resourcer* s_Instance = nullptr;
 

@@ -6,7 +6,7 @@
 
 #include "Scene.h"
 
-namespace Engine {
+namespace TEngine {
 	class SceneManager {
 	public:
 		//Ensuring no copying

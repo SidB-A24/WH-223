@@ -6,7 +6,7 @@
 #include <sstream>
 
 
-namespace Engine {
+namespace TEngine {
 	
 	static SceneManager* s_Instance = nullptr;
 
