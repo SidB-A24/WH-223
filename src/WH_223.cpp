@@ -7,6 +7,7 @@
 
 #include "tengine/SceneManager.h"
 #include "tengine/Scene.h"
+#include "tengine/Resourcer.h"
 
 int main()
 {
@@ -16,6 +17,7 @@ int main()
 	//Initializing sceneManager as a static class. It can now be used via TEngine::SceneManager.instance();
 
 	TEngine::SceneManager sceneManager;
+	TEngine::Resourcer resourcer;
 
 	std::shared_ptr < TEngine::Scene > gameScene = std::make_shared <TEngine::Scene> ();
 
