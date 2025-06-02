@@ -1,13 +1,4 @@
-﻿// WH_223.cpp : Defines the entry point for the application.
-//
-
-#include <memory>
-
-#include "WH_223.h"
-
-#include "tengine/SceneManager.h"
-#include "tengine/Scene.h"
-#include "tengine/Resourcer.h"
+﻿#include "WH_223.h"
 
 int main()
 {
@@ -19,7 +10,7 @@ int main()
 	TEngine::SceneManager sceneManager;
 	TEngine::Resourcer resourcer;
 
-	std::shared_ptr < TEngine::Scene > gameScene = std::make_shared <TEngine::Scene> ();
+	std::shared_ptr < TEngine::Scene > gameScene = std::make_shared <TEngine::Scene> (WH_223::Game());
 
 	sceneManager.push_scene(gameScene);
 	sceneManager.run();

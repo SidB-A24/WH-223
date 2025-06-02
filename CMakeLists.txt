@@ -12,7 +12,14 @@ endif()
 project ("WH_223")
 
 # Add source to this project's executable.
-add_executable (WH_223 "src/WH_223.cpp" "src/WH_223.h" "src/tengine/Logger.cpp" "src/tengine/Logger.h" "src/tengine/Resourcer.cpp" "src/tengine/Resourcer.h" "src/tengine/Scene.cpp" "src/tengine/Scene.h" "src/tengine/SceneManager.cpp" "src/tengine/SceneManager.h" "src/wh_223/Game.cpp" "src/wh_223/Game.h" "src/wh_223/Labyrinth.h" "src/wh_223/Labyrinth.cpp" "src/wh_223/Entity/Entity.h" "src/wh_223/Entity/Entity.cpp" "src/wh_223/Entity/Player.h" "src/wh_223/Entity/Player.cpp" "src/wh_223/Entity/Narrator.h" "src/wh_223/Entity/Narrator.cpp" "src/wh_223/Resources.h")
+add_executable (WH_223 "src/WH_223.cpp" "src/WH_223.h" 
+"src/core/Game.cpp" "src/core/Game.h" 
+"src/core/Labyrinth.h" "src/core/Labyrinth.cpp" 
+"src/core/Resources.h" 
+"src/entity/Entity.h" "src/entity/Entity.cpp" 
+"src/entity/Player.h" "src/entity/Player.cpp" 
+"src/entity/Narrator.h" "src/entity/Narrator.cpp"
+)
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET WH_223 PROPERTY CXX_STANDARD 20)
@@ -22,19 +29,14 @@ endif()
 
 # Dependencies
 include(FetchContent)
-set(RAYLIB_VERSION 5.0)
+
+#Now for TEngine
 FetchContent_Declare(
-    raylib
-    URL https://github.com/raysan5/raylib/archive/refs/tags/${RAYLIB_VERSION}.tar.gz
-    FIND_PACKAGE_ARGS ${RAYLIB_VERSION} EXACT
+    TEngine
+    GIT_REPOSITORY https://github.com/SidB-A24/TEngine.git
+    GIT_TAG master
 )
 
-# Removes examples
-set(BUILD_EXAMPLES OFF CACHE INTERNAL "")
+FetchContent_MakeAvailable(TEngine)
 
-
-#Fetches content of raylib and adds to the project files
-FetchContent_MakeAvailable(raylib)
-
-#Links libraries to the project
-target_link_libraries(${PROJECT_NAME} raylib)
+target_link_libraries(${PROJECT_NAME} TEngine)
