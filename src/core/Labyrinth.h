@@ -23,20 +23,21 @@ namespace WH_223
 	//MAP METHODS
 	private:
 
-		void p_move_walls(std::unordered_map<Vector2, std::string> tileMap); //This will implement changes made due to story progression
 
 	//PUBLIC METHODS
 	public:
+		void move_walls(std::unordered_map<Vector2, std::string> tileMap); //This will implement changes made due to story progression
+		
 		/*
 		We store a copy of the tile under the player, and note which floor tile it is. Then render only that rooms floor tiles and nothing else. All wall tiles will always be rendered.
 		Rooms will always be fully lit, and walls that aren't in contact with the tiles of this room will be darkened? maybe.
 		Hallways will be dimmed with a gradient vignette effect.
 		*/
-		void draw(std::weak_ptr<Entity> player); //Draws the world based on the player position. 
+		void draw(); //Draws the world based on the player position. 
 
 		void update(std::weak_ptr<Entity> player, std::weak_ptr<Narrator> narrator); //Updates the world using requests from the narrator.
 
-		std::unordered_map<Vector2, std::string> load_tileMap_from_csv(std::string identifier); //Loads a given tilemap from csv files.
+		std::unordered_map<Vector2, std::string> load_tileMap_from_csv(const char* identifier); //Loads a given tilemap from csv files.
 		Vector2 get_map_size_in_pixels();
 
 	//PRIVATE METHODS

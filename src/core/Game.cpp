@@ -10,6 +10,8 @@ WH_223::Game::Game()
 
 void WH_223::Game::run_init()
 {
+	cameraPosition = Vector2{ 0, 0 };
+
 	std::filesystem::path baseFolderPath;
 	//Loading the CSV data for our tilemaps.
 	baseFolderPath = "../../res/data/tilemaps";
@@ -34,7 +36,8 @@ void WH_223::Game::run_init()
 	//Create the labyrinth class.
 	p_labyrinthPtr = std::make_shared <Labyrinth>(Labyrinth());
 
-	p_labyrinthPtr->load_tileMap_from_csv("testing");
+	auto tileMap = p_labyrinthPtr->load_tileMap_from_csv("testing");
+	p_labyrinthPtr->move_walls(tileMap);
 
 	Vector2 mapDimensions = p_labyrinthPtr->get_map_size_in_pixels();
 	panelTexture = LoadRenderTexture(mapDimensions.x, mapDimensions.y); //Implicit float to int conversion, however the get_map... is always going to be an integer number, so no hitches. 
@@ -50,7 +53,7 @@ void WH_223::Game::draw()
 	BeginTextureMode(panelTexture);
 	ClearBackground(BLACK);
 
-	//p_labyrinthPtr->draw(p_playerPtr); //There will be an implicit conversion from shared ptr to weak ptr. Good.
+	p_labyrinthPtr->draw(); //There will be an implicit conversion from shared ptr to weak ptr. Good.
 	//TODO: Player.draw
 
 	EndTextureMode();
