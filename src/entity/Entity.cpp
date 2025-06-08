@@ -18,6 +18,10 @@ void WH_223::Entity::p_move_entity(Vector2 direction)
     p_position = Vector2Add(direction, p_position);
 }
 
+WH_223::Entity::Entity()
+{
+}
+
 Vector2 WH_223::Entity::get_quantised_position()
 {
     return Vector2{ floorf(p_position.x) , floorf(p_position.y) };

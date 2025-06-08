@@ -10,12 +10,12 @@ int main()
 	TEngine::SceneManager sceneManager;
 	TEngine::Resourcer resourcer;
 
-	std::shared_ptr < TEngine::Scene > gameScene = std::make_shared <TEngine::Scene> (WH_223::Game());
+	std::shared_ptr < TEngine::Scene > gameScene = std::make_shared < WH_223::Game > (WH_223::Game());
 
 	sceneManager.push_scene(gameScene);
+	std::cout << "Goodbye CMake." << std::endl;
 	sceneManager.run();
 
-	std::cout << "Goodbye CMake." << std::endl;
 
 	return 0;
 }
